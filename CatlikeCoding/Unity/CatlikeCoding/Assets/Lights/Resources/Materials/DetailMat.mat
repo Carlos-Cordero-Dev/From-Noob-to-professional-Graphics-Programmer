@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MyMaterial
-  m_Shader: {fileID: 4800000, guid: a6e61a47ebbae314cb389c4b20ba7c72, type: 3}
+  m_Name: DetailMat
+  m_Shader: {fileID: 4800000, guid: 5de5399c54c82ce42be8cd5b3e262e3b, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -36,12 +36,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DetailTex:
+        m_Texture: {fileID: 2800000, guid: 14988701f5d54ff41a15455b12cea3aa, type: 3}
+        m_Scale: {x: 10, y: 10}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7ab0cc2ce290a5846b47d4e2feee3265, type: 3}
+        m_Texture: {fileID: 2800000, guid: f00c11dae68940d47b18e7ee978661a4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -77,5 +81,5 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Tint: {r: 0.7735849, g: 0.3247597, b: 0.34544888, a: 1}
+    - _Tint: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_BuildTextureStacks: []
