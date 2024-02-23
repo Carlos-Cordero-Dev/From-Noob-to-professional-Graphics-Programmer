@@ -1,0 +1,8 @@
+
+Bump mapping
+-Normal calculated using tangent via an aproximated slope
+-Computation every frame of non changing normals, normal mapping created
+
+Normal mapping
+-You can combine textures + normal maps with detail textures + detail normal textures to have from afar bumpiness
+and from up close details with bumps
