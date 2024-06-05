@@ -18,6 +18,19 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Applicationclass.cpp" />
+    <ClCompile Include="D3Dclass.cpp" />
+    <ClCompile Include="D3Dclass.h" />
+    <ClCompile Include="Inputclass.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Systemclass.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Applicationclass.h" />
+    <ClInclude Include="Inputclass.h" />
+    <ClInclude Include="Systemclass.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
