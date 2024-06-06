@@ -1,0 +1,25 @@
+
+.h
+===================
+order headers (C headers (stuff with .h) , C++ headers, other libraries, your project stuff)
+alphabetical include order if possible
+includes should not have unix directory stuff (../ , etc)
+always try to use "" unless extrictly needed <>
+inline & template functions have to have their deffinition inside the .h
+if a template is only used inside a .cpp it can be defined inside it
+try to avoid forward declaring if possible
+
+si no tienen todo lo que necesitan por si solas usar .inc
+
+
+
+.cpp
+====================
+even if your .h includes something, if a symbol is used and an include is needed for that symbol, include it
+if something isnt used outisde of a .cpp file internally link them (static or unnamed namespace {})
+local variables: delacaration and initialization in the same line if possible
+
+
+templates<T>
+====================
+if a template is only used inside a .cpp it can be defined inside the cpp

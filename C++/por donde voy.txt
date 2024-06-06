@@ -1,0 +1,2 @@
+style guide Static and Global Variables: C++ style guide
+P1 C++ core guidelines: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#main 
