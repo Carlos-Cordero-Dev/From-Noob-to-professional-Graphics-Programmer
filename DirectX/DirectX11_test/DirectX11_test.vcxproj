@@ -20,16 +20,39 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Applicationclass.cpp" />
+    <ClCompile Include="Cameraclass.cpp" />
+    <ClCompile Include="Colorshaderclass.cpp" />
     <ClCompile Include="D3Dclass.cpp" />
     <ClCompile Include="D3Dclass.h" />
     <ClCompile Include="Inputclass.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Modelclass.cpp" />
     <ClCompile Include="Systemclass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Applicationclass.h" />
+    <ClInclude Include="Cameraclass.h" />
+    <ClInclude Include="Colorshaderclass.h" />
+    <ClInclude Include="global_config.h" />
     <ClInclude Include="Inputclass.h" />
+    <ClInclude Include="Modelclass.h" />
     <ClInclude Include="Systemclass.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="color.ps.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <FileType>Document</FileType>
+    </None>
+    <None Include="color.vs.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <FileType>Document</FileType>
+    </None>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
