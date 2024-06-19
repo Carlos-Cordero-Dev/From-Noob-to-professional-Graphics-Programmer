@@ -37,14 +37,14 @@ bool ColorShaderClass::Initialize(ID3D11Device* device, HWND hwnd)
 	std::wstring ps_path_w = converter.from_bytes(ps_path);
 
 	// Set the filename of the vertex shader.
-	error = wcscpy_s(vsFilename, 128, L"../../color.vs.hlsl"/*vs_path_w.c_str()*/);
+	error = wcscpy_s(vsFilename, 128, vs_path_w.c_str());
 	if (error != 0)
 	{
 		return false;
 	}
 
 	// Set the filename of the pixel shader.
-	error = wcscpy_s(psFilename, 128, L"../../color.ps.hlsl"/*ps_path_w.c_str()*/);
+	error = wcscpy_s(psFilename, 128, ps_path_w.c_str());
 	if (error != 0)
 	{
 		return false;

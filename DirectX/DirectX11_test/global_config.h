@@ -1,3 +1,3 @@
 #pragma once
 
-#define DATA_FOLDER "../../"
+#define DATA_FOLDER ""
