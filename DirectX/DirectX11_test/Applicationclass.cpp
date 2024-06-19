@@ -32,7 +32,8 @@ bool ApplicationClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	m_Camera = new CameraClass;
 
 	// Set the initial position of the camera.
-	m_Camera->SetPosition(0.0f, 0.0f, -5.0f);
+	XMFLOAT3 initialPos = XMFLOAT3(0.0f, 0.0f, -5.0f);
+	m_Camera->SetPosition(initialPos);
 
 	// Create and initialize the model object.
 	m_Model = new ModelClass;
@@ -99,6 +100,15 @@ bool ApplicationClass::Frame()
 {
 	bool result;
 
+
+	//Gameplay
+	XMVECTOR currPos = XMLoadFloat3(m_Camera->GetPosition());
+	XMVECTOR offset = XMVectorSet(0.001f,0.0f,0.0f, 0.0f);
+	XMVECTOR vecResult = XMVectorAdd(currPos, offset);
+	XMFLOAT3 newPos;
+	XMStoreFloat3(&newPos, vecResult);
+
+	m_Camera->SetPosition(newPos);
 
 	// Render the graphics scene.
 	result = Render();

@@ -13,18 +13,18 @@ public:
 	CameraClass(const CameraClass&);
 	~CameraClass();
 
-	void SetPosition(float, float, float);
-	void SetRotation(float, float, float);
+	void SetPosition(XMFLOAT3&);
+	void SetRotation(XMFLOAT3&);
 
-	XMFLOAT3 GetPosition();
+	const DirectX::XMFLOAT3* GetPosition();
 	XMFLOAT3 GetRotation();
 
 	void Render();
 	void GetViewMatrix(XMMATRIX&);
 
 private:
-	float m_positionX, m_positionY, m_positionZ;
-	float m_rotationX, m_rotationY, m_rotationZ;
+	XMFLOAT3 m_position;
+	XMFLOAT3 m_rotation;
 	XMMATRIX m_viewMatrix;
 };
 

@@ -3,44 +3,35 @@
 
 CameraClass::CameraClass()
 {
-	m_positionX = 0.0f;
-	m_positionY = 0.0f;
-	m_positionZ = 0.0f;
-
-	m_rotationX = 0.0f;
-	m_rotationY = 0.0f;
-	m_rotationZ = 0.0f;
+	m_position = XMFLOAT3(0.0f, 0.0f, 0.0f);
+	m_rotation = XMFLOAT3(0.0f, 0.0f, 0.0f);
 }
 
 CameraClass::CameraClass(const CameraClass& other) {}
 CameraClass::~CameraClass() {}
 
-void CameraClass::SetPosition(float x, float y, float z)
+void CameraClass::SetPosition(XMFLOAT3& pos)
 {
-	m_positionX = x;
-	m_positionY = y;
-	m_positionZ = z;
+	m_position = pos;
 	return;
 }
 
 
-void CameraClass::SetRotation(float x, float y, float z)
+void CameraClass::SetRotation(XMFLOAT3& rot)
 {
-	m_rotationX = x;
-	m_rotationY = y;
-	m_rotationZ = z;
+	m_rotation = rot;
 	return;
 }
 
-XMFLOAT3 CameraClass::GetPosition()
+const DirectX::XMFLOAT3* CameraClass::GetPosition()
 {
-	return XMFLOAT3(m_positionX, m_positionY, m_positionZ);
+	return &m_position;
 }
 
 
 XMFLOAT3 CameraClass::GetRotation()
 {
-	return XMFLOAT3(m_rotationX, m_rotationY, m_rotationZ);
+	return m_rotation;
 }
 
 void CameraClass::Render()
@@ -60,9 +51,7 @@ void CameraClass::Render()
 	upVector = XMLoadFloat3(&up);
 
 	// Setup the position of the camera in the world.
-	position.x = m_positionX;
-	position.y = m_positionY;
-	position.z = m_positionZ;
+	position = m_position;
 
 	// Load it into a XMVECTOR structure.
 	positionVector = XMLoadFloat3(&position);
@@ -76,9 +65,9 @@ void CameraClass::Render()
 	lookAtVector = XMLoadFloat3(&lookAt);
 
 	// Set the yaw (Y axis), pitch (X axis), and roll (Z axis) rotations in radians.
-	pitch = m_rotationX * 0.0174532925f;
-	yaw = m_rotationY * 0.0174532925f;
-	roll = m_rotationZ * 0.0174532925f;
+	pitch = m_rotation.x * 0.0174532925f;
+	yaw = m_rotation.y * 0.0174532925f;
+	roll = m_rotation.z * 0.0174532925f;
 
 	// Create the rotation matrix from the yaw, pitch, and roll values.
 	rotationMatrix = XMMatrixRotationRollPitchYaw(pitch, yaw, roll);
